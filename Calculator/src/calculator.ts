@@ -22,29 +22,27 @@ export class Calculator {
   }
 }
 
-// можно и с обычным конструктором
+//можно и с обычным конструктором
 // export class Calculator  {
 //   a: number;
 //   b: number;
-//   operation: string;
 
-//   constructor(a: number,b: number, operation:string) {
-//   this.a=a;
-//   this.b=b;
-//   this.operation=operation;
+//   constructor(a: number,b: number) {
+//     this.a=a;
+//     this.b=b;
 //   }
 
-
-//   operate(){
-//     if(this.operation=="+"){
+//   calculate(operation:string){
+//     if(operation=="+"){
 //       return this.a+this.b;
-//     } else if(this.operation=="-"){
+//     } else if(operation=="-"){
 //       return this.a-this.b;
-//     } else if(this.operation=="*"){
+//     } else if(operation=="*"){
 //       return this.a*this.b;
-//     } else if( this.operation=="/"){
+//     } else if(operation=="/"){
 //       return this.a/this.b;
+//     } else {
+//       return "error!!!"
 //     }
-    
 //   }
 // }
