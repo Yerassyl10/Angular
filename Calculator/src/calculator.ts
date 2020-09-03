@@ -1,20 +1,22 @@
 export class Calculator {
   a: number;
   b: number;
+  operation: string;
 
   constructor(obj:any) {
     this.a=obj.a;
     this.b=obj.b;
+    this.operation=obj.op;
   }
 
-  calculate(operation:string){
-    if(operation=="+"){
+  calculate(){
+    if(this.operation=="+"){
       return this.a+this.b;
-    } else if(operation=="-"){
+    } else if(this.operation=="-"){
       return this.a-this.b;
-    } else if(operation=="*"){
+    } else if(this.operation=="*"){
       return this.a*this.b;
-    } else if(operation=="/"){
+    } else if(this.operation=="/"){
       return this.a/this.b;
     } else {
       return "error!!!"
@@ -26,20 +28,22 @@ export class Calculator {
 // export class Calculator  {
 //   a: number;
 //   b: number;
+//   operation: string;
 
-//   constructor(a: number,b: number) {
+//   constructor(a: number,b: number, op: string) {
 //     this.a=a;
 //     this.b=b;
+//     this.operation=op;
 //   }
 
-//   calculate(operation:string){
-//     if(operation=="+"){
+//   calculate(){
+//     if(this.operation=="+"){
 //       return this.a+this.b;
-//     } else if(operation=="-"){
+//     } else if(this.operation=="-"){
 //       return this.a-this.b;
-//     } else if(operation=="*"){
+//     } else if(this.operation=="*"){
 //       return this.a*this.b;
-//     } else if(operation=="/"){
+//     } else if(this.operation=="/"){
 //       return this.a/this.b;
 //     } else {
 //       return "error!!!"
