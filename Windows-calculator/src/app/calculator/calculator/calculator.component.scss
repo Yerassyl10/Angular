@@ -1,0 +1,74 @@
+:host{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 5px;
+}
+.button{
+    width: 25%;
+    line-height: 3.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0%;
+    border-width: 0.1ch;
+}
+.button1{
+    width: 20%;
+    line-height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0%;
+    border-width: 0.1ch;
+}
+.down-site{
+    display: flex;
+    flex-wrap: wrap;
+}
+.up-site{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.line{
+    direction: rtl;
+    width: 90%;
+    padding: 4.5%;
+}
+
+.lineOut{
+    width: 90%;
+    padding: 4.5%;
+}
+
+#left{
+    
+    height: 400px;
+    width: 50%;
+    float: left;
+   
+}
+#right{
+
+	height: 400px;
+	width: 50%;
+    float: right;
+   
+}	
+#historySpace{
+    padding-left: 30px;
+    height: 400px;
+    width: 45%;
+    float: left;
+}
+
+#memorySpace{
+    padding-left: 20px;
+    height: 400px;
+	width: 40%;
+    float: right;
+    
+    
+}
+.mclear{
+    margin-top: 25%;
+}
