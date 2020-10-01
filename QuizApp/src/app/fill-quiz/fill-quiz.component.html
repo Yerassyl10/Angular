@@ -1,0 +1,22 @@
+<h1> FIll the QUIZ</h1>
+  <label *ngIf="time!=0">You are given: {{time}} sec</label>
+<br>
+<button (click)="startQuiz()">Start the quiz</button>
+<div *ngIf="buttonClicked"> 
+  <div  *ngFor="let question of questionList">
+    <ul>
+	    {{question.question}}
+    </ul>
+    <ul *ngFor="let option of question.ansOptions">
+        	<input type="checkbox" (click)="check($event,option, question.answer)">
+           		{{option}} 
+    </ul>
+    
+</div>
+<button id="myBtn" (click)="submit()" [disabled]="isSubmitted">SUBMIT</button>
+<div *ngIf="isSubmitted"> 
+  Result is in 'Result Quiz' page
+  </div>
+</div>
+
+

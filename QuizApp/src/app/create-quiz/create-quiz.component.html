@@ -1,0 +1,66 @@
+<h1> Create Quiz questions</h1>
+
+<form [formGroup]="myForm">
+    <br>
+        Question  <input placeholder="Question" formControlName="question">
+    <br>
+    <br>
+    <div formArrayName="options" >
+        <label>Options:   </label>
+        <button (click) = "addOption()"><label>add option</label></button>  <br>
+        <div *ngFor="let item of getOptions.controls; let i=index" [formGroupName]="i">
+            <input placeholder="write your option" formControlName="o">
+            <button (click) = "deleteOption(i)">delete</button>
+            <br>
+            <br>
+        </div>
+    </div>
+    <br>
+
+        Right answer: <input type="text" formControlName="answer">
+    <br>
+    <br>
+    
+    <button (click) = "submit()" >SUBMIT</button>
+    <br>
+    <br>
+</form>
+
+<label>Set timer for the quiz</label>
+<br>
+<form [formGroup]="form">
+    <input type="number" [formControl]="textControl" />
+    <button (click) = "setTimer()" >set</button> 
+   <br>
+    Time for quiz<input
+    id="1"
+        type="radio"
+        [value]="1"
+        name="nameofradio"
+        [formControl]="radioControl1"
+        (click)="timeClicked(1)"
+    />
+    <br>
+    Time for 1 question<input
+    id="2"
+        type="radio"
+        [value]="2"
+        name="nameofradio"
+        [formControl]="radioControl2"
+        (click)="timeClicked(2)"
+    />
+    <br>
+    No timer<input
+    id="3"
+        type="radio"
+        [value]="3"
+        name="nameofradio"
+        [formControl]="radioControl3"
+        (click)="timeClicked(3)"
+    />
+   
+</form>
+
+
+
+
