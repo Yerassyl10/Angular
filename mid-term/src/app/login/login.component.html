@@ -1,0 +1,19 @@
+<div class="login-container">
+<div class="form-container">
+    <div *ngIf="!logged">
+    <mat-form-field matInput appearance="fill">
+        <input matInput [value]="username">
+    </mat-form-field>
+    <br>
+    <mat-form-field matInput appearance="fill" >
+        <input matInput [value]="password">
+      </mat-form-field>
+    <br>
+    <button (click)="login()" class="btn-primary">Login</button>
+    </div>
+    <div *ngIf="logged">
+        <h1>You are logged in</h1>
+        <button (click)="logout()" class="btn-primary">Logout</button>
+    </div>
+</div>
+</div>
