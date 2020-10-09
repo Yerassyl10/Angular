@@ -6,17 +6,42 @@ import {Injectable} from "@angular/core";
 export class AppInterceptor implements HttpInterceptor {
   constructor() {
   }
-
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
-    const token = localStorage.getItem('token');
-    if (token){
-      const authReq = req.clone({
-        headers: req.headers.append('Authorization', `JWT ${token}`)
-      });
-      return next.handle(authReq);
+  intercept(
+    
+    req: HttpRequest<any>,
+    next: HttpHandler
+): Observable<HttpEvent<any>> {
+  const token = localStorage.getItem('token');
+    if (token) {
+        return next.handle(
+            req.clone({
+                setHeaders: {
+                    Authorization: token,
+                },
+            })
+        );
+    } else {
+        return next.handle(req);
     }
+}
 
-    return next.handle(req);
-  }
+  // intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
+  //   const token = localStorage.getItem('token');
+  //   if (token){
+  //     const authReq = req.clone({
+  //       headers: req.headers.append('Authorization', `JWT ${token}`)
+  //     });
+  //     return next.handle(authReq);
+  //   }
+
+  //    return next.handle(req);
+  //  }
+  // intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  //   const userToken = 'secure-user-token';
+  //   const modifiedReq = req.clone({ 
+  //     headers: req.headers.set('Authorization', `Bearer ${userToken}`),
+  //   });
+  //   return next.handle(modifiedReq);
+  
 }

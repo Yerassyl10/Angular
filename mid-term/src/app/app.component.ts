@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { LoginService} from './services/login.service'
+import { HttpService} from './services/http.service'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,9 +10,15 @@ export class AppComponent {
   title = 'mid-term';
   public loggedIn=false;
   
-  constructor(private loginService: LoginService,) { }
+  constructor(private _httpService: HttpService) { }
 
-  ngOnInit(): void {
   
-  } 
+  async ngOnInit() {
+    // const users = await this._httpService.users();
+    // const user = users[4];
+    // console.log(await this._httpService.signIn(user));
+
+     console.log(await this._httpService.posts())
+}
+
 }

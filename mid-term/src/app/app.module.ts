@@ -19,6 +19,8 @@ import { PostFilterPipe } from './post-filter.pipe';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { RegistrationComponent } from './registration/registration.component';
 import {MatButtonModule} from '@angular/material/button';
+import { RouterBasedAlbumsComponent } from './router-based-albums/router-based-albums.component';
+import { ContentPBasedAlbumsComponent } from './content-p-based-albums/content-p-based-albums.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import {MatButtonModule} from '@angular/material/button';
     PostFilterPipe,
     CreatePostComponent,
     RegistrationComponent,
+    RouterBasedAlbumsComponent,
+    ContentPBasedAlbumsComponent,
     
 
   ],

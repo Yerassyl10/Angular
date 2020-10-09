@@ -14,14 +14,21 @@ export class LoginService {
   constructor( private http: HttpClient) { }
 
   login(username, password): Observable<LoginResponse>{
+    
     return this.http.post<LoginResponse>(`${this.BASE_URL}/sign-in`, {
       username: username,
       password: password
     })
   }
-  // register(user: User){
-  //   this.USERS.push(user);
-  // }
+  async signIn(model) {
+    const tokenResult = await this.http
+        .post<LoginResponse>(`http://localhost:3000/sign-in`, model)
+        .toPromise();
+
+    return tokenResult;
+}
+
+
   register(user: User): Observable<User>{
     return this.http.post<User>(`${this.BASE_URL}/users`, user)
   }

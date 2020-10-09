@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Photo} from '../models/photo';
 import { Post } from '../models/post';
-
+import { HttpService } from '../services/http.service';
 import {User} from '../models/user'
 import {GeneralService} from '../services/general.service';
 
@@ -21,6 +21,8 @@ export class PostsComponent implements OnInit {
   
   constructor(private generalService: GeneralService) { }
 
+
+
   ngOnInit(): void {
 
     this.getPosts();
@@ -28,8 +30,10 @@ export class PostsComponent implements OnInit {
     
   }
   getPosts(){
+
     this.generalService.getPosts()
     .subscribe(posts => this.posts = posts);
+    
   }
 
 

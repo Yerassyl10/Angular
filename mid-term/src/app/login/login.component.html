@@ -2,11 +2,11 @@
 <div class="form-container">
     <div *ngIf="!logged">
     <mat-form-field matInput appearance="fill">
-        <input matInput [value]="username">
+        <input matInput [(ngModel)]="username">
     </mat-form-field>
     <br>
     <mat-form-field matInput appearance="fill" >
-        <input matInput [value]="password">
+        <input matInput [(ngModel)]="password">
       </mat-form-field>
     <br>
     <button (click)="login()" class="btn-primary">Login</button>

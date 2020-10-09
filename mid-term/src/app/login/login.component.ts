@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpEvent, HttpHeaders, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
 
 import {LoginService } from '../services/login.service'
 
@@ -10,6 +11,8 @@ import {LoginService } from '../services/login.service'
 export class LoginComponent implements OnInit {
   username = "";
   password = "";
+  u="Bret";
+  p="Qwerty123#"
   logged=false;
   constructor(private loginService: LoginService,) { }
 
@@ -19,18 +22,18 @@ export class LoginComponent implements OnInit {
       this.logged=true;
     }
   } 
-  login(){
   
-    this.loginService.login(this.username,this.password).subscribe( res=>{
-      localStorage.setItem('token', res.token);
+  login(){
+    this.loginService.login(this.u,this.p).subscribe( res=>{
+      localStorage.setItem('token', JSON.stringify({res}));
       this.logged=true;
       this.username='';
       this.password='';
     })
   }
+
   logout(){
     localStorage.clear();
     this.logged = false;
   }
-
 }

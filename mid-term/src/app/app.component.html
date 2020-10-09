@@ -1,18 +1,17 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
       <h1>{{ title }}</h1>
-      <a mat-button>Router Based</a>
-      <a mat-button>Content projection Based</a>
+      <a mat-button routerLink="album1">Albums(Router Based)</a>
+      <a mat-button routerLink="album2">Albums(Content projection Based)</a>
       <div class="spacer"></div>
+      <button mat-button  routerLink="posts">
+        Posts
+      </button>
       <button mat-button  routerLink="createpost">
           Create post
         </button>
-
       <button mat-button routerLink="login">
           Sign In
-      </button>
-      <button mat-button>
-          Sign Out
       </button>
   </mat-toolbar-row>
 </mat-toolbar>
