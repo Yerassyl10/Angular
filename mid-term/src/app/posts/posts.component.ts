@@ -26,6 +26,7 @@ export class PostsComponent implements OnInit {
 
     this.getPosts();
     this.getUsers();
+    console.log(JSON.stringify(localStorage.getItem( 'token' ))) ;
     
   }
   getPosts(){

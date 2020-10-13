@@ -11,7 +11,7 @@ export class AppInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
 ): Observable<HttpEvent<any>> {
-   const token = JSON.parse( localStorage.getItem( 'token' ) );
+   const token = localStorage.getItem( 'token' ) ;
     if (token) {
         return next.handle(
             req.clone({
