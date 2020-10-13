@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {User} from '../models/user'
-import {LoginService} from '../services/login.service'
+import {GeneralService} from '../services/general.service'
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -16,7 +16,7 @@ export class RegistrationComponent implements OnInit {
   loading = false;
   constructor(
     private fb: FormBuilder,
-    private loginService: LoginService
+    private loginService: GeneralService
   ) { }
 
   ngOnInit(): void {

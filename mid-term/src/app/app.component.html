@@ -1,23 +1,28 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-      <h1>{{ title }}</h1>
-      <a mat-button routerLink="album1">Albums(Router Based)</a>
-      <a mat-button routerLink="album2">Albums(Content projection Based)</a>
-      <div class="spacer"></div>
-      <button mat-button  routerLink="posts">
-        Posts
-      </button>
-      <button mat-button  routerLink="createpost">
-          Create post
+<mat-toolbar color="basic">
+    <mat-toolbar-row>
+        <button mat-fab color="basic" routerLink="/posts">
+            <mat-icon>home</mat-icon>
+          </button>
+        <a  mat-button routerLink="/route-based" >Album #1(route-based)</a>
+        <a mat-button routerLink="/content-projection-based" >Album #2(content-projection)</a>
+        
+        <div class="spacer"></div>
+        
+        <a mat-button routerLink="/posts">Posts</a>
+        <button
+            mat-button 
+            routerLink="/login"
+            *ngIf="!authenticationService.isAuthenticated">
+            Sign In
         </button>
-      <button mat-button routerLink="login">
-          Sign In
-      </button>
-  </mat-toolbar-row>
+        <button
+            mat-button
+            routerLink="/login"
+            *ngIf="authenticationService.isAuthenticated">
+            You are signed in
+        </button>
+    </mat-toolbar-row>
 </mat-toolbar>
+
+
 <router-outlet></router-outlet>
-
-
-<div *ngIf="loggedIn!"> 
-    <p>Please sign in</p>
-</div>

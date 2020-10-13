@@ -1,0 +1,29 @@
+<mat-list class="products-style">
+    <mat-list-item *ngFor="let comment of comments" class="box">
+        {{comment.email}}
+       
+        Name: {{comment.name}}
+       
+        Body: {{comment.body}}
+        <mat-divider></mat-divider>
+    </mat-list-item>
+</mat-list>
+
+<div class="example-container">
+    <mat-form-field appearance="fill">
+        <mat-label >Name</mat-label>
+        <input matInput [(ngModel)]="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label >Email</mat-label>
+        <input matInput [(ngModel)]="email"t>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Body</mat-label>
+        <input matInput [(ngModel)]="body">
+    </mat-form-field>
+   
+  </div>
+<button mat-raised-button  (click)="addComment()"> + Add Comment</button> 

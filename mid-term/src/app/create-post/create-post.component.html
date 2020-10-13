@@ -1,16 +1,21 @@
+<div class="login-container">
+    <div class="form-container">
 <form [formGroup]="myForm">
     <br>
-        userId  <input type="number"  formControlName="userId">
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="userId" class="input" placeholder="userId"></mat-form-field>
+
     <br>
-        id  <input type="text"  formControlName="id">
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="title" class="input" placeholder="title"></mat-form-field>
+ 
     <br>
-        title  <input type="text"  formControlName="title">
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="body" class="input" placeholder="body"></mat-form-field>
+ 
+    
     <br>
-        body  <input type="text"  formControlName="body">
-    <br>
+    <button mat-raised-button  (click)="submit()" class="btn-primary">SUBMIT</button>
+
     
     
-    <button (click) = "submit()" >SUBMIT</button>
-    <br>
-    <br>
 </form>
+</div>
+</div>

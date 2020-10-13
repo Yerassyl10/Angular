@@ -1,0 +1,41 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <h1 >Album of {{ contact }}</h1>
+        <div class="spacer"></div>
+        <button mat-stroked-button (click)="showAlbums()">Open photos</button>
+       
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+<div *ngFor="let album of albums">
+    <section class="mat-display-2">
+        <h1>{{ album.title }}</h1>
+      </section>
+    
+    <div class="album-style">
+<div  *ngFor="let photo of photos">
+    <div *ngIf="photo.albumId==album.id">
+       
+    <mat-card class="example-card">
+    <img mat-card-image src="{{photo.url}}" width="240" height="240" alt="suret">
+    </mat-card>
+</div>
+</div>
+</div>
+<mat-divider></mat-divider>
+</div>
+
+
+<!-- <ul class="messages">
+    <li class="message" *ngFor="let album of albums">
+       {{ album.title }}
+        <div *ngFor="let photo of photos" >
+            <div *ngIf="photo.albumId==album.id">
+                <img class="best-item" src="{{photo.url}}" width="300" height="240" alt="suret">
+            </div>
+        </div>
+        
+    </li>
+</ul> -->

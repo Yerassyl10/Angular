@@ -1,41 +1,56 @@
+<div class="login-container">
+    <div class="form-container">
+        <h2>Registration form</h2>
 <form [formGroup]="myForm">
+    
     <br>
-        ID  <input type="number"  formControlName="id">
-    <br>
-        Name  <input type="text"  formControlName="name">
-    <br>
-        Username  <input type="text"  formControlName="username">
-    <br>
-        email  <input type="text"  formControlName="email">
-    <br>
-        Password <input type="text"  formControlName="password">
-        <br>
-        street: <input type="text"  formControlName="street">
-        <br>
-        suite:<input type="text"  formControlName="suite">
-        <br>
-        city:<input type="text"  formControlName="city">
-        <br>
-        zipcode:<input type="text"  formControlName="zipcode">
-        <br>
-        lat:<input type="text"  formControlName="geo">
-        <br>
-        lng:<input type="text"  formControlName="lng">
-        <br>
-        phone: <input type="text"  formControlName="phone">
-        <br>
-        website: <input type="text"  formControlName="website">
-        <br>
-        name: <input type="text"  formControlName="name">
-        <br>
-        catchPhrase: <input type="text"  formControlName="catchPhrase">
-        <br>
-        bs: <input type="text"  formControlName="bs">
-        <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="name" class="input" placeholder="Name"></mat-form-field>
 
-    
-    
-    <button (click) = "submit()" >SUBMIT</button>
     <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="username" class="input" placeholder="Username"></mat-form-field>
+
     <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="email" class="input" placeholder="Email"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="password" class="input" placeholder="Password"></mat-form-field>
+        
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="street" class="input" placeholder="Street"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="suite" class="input" placeholder="Suite"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="city" class="input" placeholder="City"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="zipcode" class="input" placeholder="Zipcode"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="lat" class="input" placeholder="lat"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="lng" class="input" placeholder="lng"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="phone" class="input" placeholder="Phone"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="website" class="input" placeholder="Website"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="name" class="input" placeholder="Name of company"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="catchPhrase" class="input" placeholder="catchPhrase"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="bs" class="input" placeholder="bs"></mat-form-field>
+
+    <br>    
+    <button mat-raised-button  (click)="submit()" class="btn-primary">SUBMIT</button>
+   
 </form>
+</div>
+</div>

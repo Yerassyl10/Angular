@@ -1,35 +1,80 @@
-<mat-form-field class="example-form-field">
+<mat-toolbar-row>
+  <mat-form-field class="example-form-field">
+    <mat-label >Search for posts</mat-label>
+    <input matInput type="text" [(ngModel)]="searchInput"/>
+    <button mat-button *ngIf="searchInput" matSuffix mat-icon-button aria-label="Clear" (click)="searchInput=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <div class="spacer"> </div>
+  <button mat-raised-button routerLink="create-post"> + Create post</button> 
+</mat-toolbar-row>
+ 
+
+  <div *ngFor="let user of users  | postFilter:searchInput" class="mli-style">
+    <div *ngFor="let post of posts" >
+      <div *ngIf="post.userId==user.id">
+  <mat-card class="example-card" >
+    <mat-card-header>
+      <mat-card-title>{{user.name}}</mat-card-title>
+      <mat-card-subtitle>{{post.title}}</mat-card-subtitle>
+    </mat-card-header>
+   
+    <mat-card-content>
+      <p>
+        {{post.body}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button routerLink="{{post.id}}">Open comments</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+</div>
+</div>
+
+
+
+<!-- <ul>
+  <div *ngFor="let user of users  | postFilter:searchInput" class="mli-style">
+   
+      <div *ngFor="let post of posts" >
+        <a routerLink="{{post.id}}">
+        <div *ngIf="post.userId==user.id">
+          Username: {{user.name}}
+          <br>
+          Post Title: {{post.title}}
+          <br>
+          Post Body: {{post.body}}
+        </div>
+      </a>
+      </div>
+
+    
+  </div >
   
-  <mat-label >Search for posts</mat-label>
-
-  <input matInput type="text" [(ngModel)]="searchInput"/>
-  <button mat-button *ngIf="searchInput" matSuffix mat-icon-button aria-label="Clear" (click)="searchInput=''">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
+  </ul> -->
 
 
-
-
-<mat-list>
+<!-- <mat-list>
     <mat-list-item *ngFor="let post of posts; last as last" class="mli-style">
       <a >
         <div *ngFor="let user of users  | postFilter:searchInput">
       
           <div *ngIf="post.userId==user.id">
             Username: {{user.name}}
-            
+            Post Title: {{post.title}}
+
             
           </div>
      
         </div>
        
-        Post Title: {{post.title}}
         
       </a>
         <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
       </mat-list-item >
-  </mat-list>
+  </mat-list> -->
   <!-- <button (click)="createPosts()"></button> 
   <mat-list>
     <mat-list-item *ngFor="let localPost of localPosts " class="mli-style">

@@ -1,24 +1,13 @@
-import { Component, OnInit} from '@angular/core';
-import { HttpService} from './services/http.service'
+import { Component } from '@angular/core';
+import { AuthenticationService } from './services/authentication.service';
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+    title = 'MIDTERM';
 
-  title = 'mid-term';
-  public loggedIn=false;
-  
-  constructor(private _httpService: HttpService) { }
-
-  
-  async ngOnInit() {
-    // const users = await this._httpService.users();
-    // const user = users[4];
-    // console.log(await this._httpService.signIn(user));
-
-     console.log(await this._httpService.posts())
-}
-
+    constructor(public authenticationService: AuthenticationService) {}
 }

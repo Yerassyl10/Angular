@@ -3,17 +3,24 @@
     <div *ngIf="!logged">
     <mat-form-field matInput appearance="fill">
         <input matInput [(ngModel)]="username">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     </mat-form-field>
     <br>
     <mat-form-field matInput appearance="fill" >
-        <input matInput [(ngModel)]="password">
+        <input matInput [(ngModel)]="password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
       </mat-form-field>
     <br>
-    <button (click)="login()" class="btn-primary">Login</button>
+  
+    <button mat-raised-button  (click)="login()" class="btn-primary">Sign in</button>
+    <button mat-raised-button   routerLink="/registr" class="btn-primary">Register</button>
+   
     </div>
     <div *ngIf="logged">
         <h1>You are logged in</h1>
-        <button (click)="logout()" class="btn-primary">Logout</button>
+        <button mat-raised-button (click)="logout()" class="btn-primary">Sign out</button>
     </div>
 </div>
 </div>

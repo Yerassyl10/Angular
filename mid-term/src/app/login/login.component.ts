@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpEvent, HttpHeaders, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
 
-import {LoginService } from '../services/login.service'
+import {AuthenticationService } from '../services/authentication.service'
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
   u="Bret";
   p="Qwerty123#"
   logged=false;
-  constructor(private loginService: LoginService,) { }
+  hide = true;
+  constructor(private authenticationService: AuthenticationService,) { }
 
   ngOnInit(): void {
     let token = localStorage.getItem('token');
@@ -24,8 +25,9 @@ export class LoginComponent implements OnInit {
   } 
   
   login(){
-    this.loginService.login(this.u,this.p).subscribe( res=>{
-      localStorage.setItem('token', JSON.stringify({res}));
+    this.authenticationService.login(this.u,this.p).subscribe( res=>{
+      localStorage.setItem('token', JSON.stringify(res));
+      this.authenticationService.signIn();
       this.logged=true;
       this.username='';
       this.password='';
@@ -34,6 +36,7 @@ export class LoginComponent implements OnInit {
 
   logout(){
     localStorage.clear();
+    this.authenticationService.signOut();
     this.logged = false;
   }
 }
