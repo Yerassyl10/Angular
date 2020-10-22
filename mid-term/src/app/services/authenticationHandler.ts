@@ -43,6 +43,6 @@ export class AuthenticationHandler
         currentState: RouterStateSnapshot,
         nextState?: RouterStateSnapshot
     ) {
-        return confirm('Вы хотите закрыть страницу?');
+        return confirm('Do you want to close the window?');
     }
 }

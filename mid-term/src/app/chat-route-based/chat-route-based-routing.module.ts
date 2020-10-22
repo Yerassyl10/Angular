@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthenticationHandler } from '../services/authenticationHandler';
-import { ContactResolver, MessagesResolver } from '../services/chat.service';
 import { ChatComponent } from '../ui/components/chat/chat.component';
 import { SelectContactComponent } from '../ui/components/select-contact/select-contact.component';
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';

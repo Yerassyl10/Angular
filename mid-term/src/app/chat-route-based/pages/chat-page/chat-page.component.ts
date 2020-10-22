@@ -1,7 +1,6 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ChatService } from 'src/app/services/chat.service';
 import {GeneralService} from'src/app/services/general.service';
 
 @Component({
@@ -16,7 +15,6 @@ export class ChatPageComponent implements OnInit {
     userId;
     albums=[];
     constructor(
-        public chatService: ChatService,
         private route: ActivatedRoute,
         public generalService:GeneralService
     ) {}

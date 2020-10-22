@@ -12,8 +12,8 @@ import { User } from '../models/user';
 export class LoginComponent implements OnInit {
   username = "";
   password = "";
-  u="Bret";
-  p="Qwerty123#"
+  // u="Bret";
+  // p="Qwerty123#"
   logged=false;
   hide = true;
   userN: String;
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       this.authenticationService.signIn();
       this.logged=true;
       this.userN =   ` ${JSON.parse(localStorage.getItem( 'token' )).username}`;
-      this.getCurrentUser()
+      // this.getCurrentUser()
       this.username='';
       this.password='';
     })
