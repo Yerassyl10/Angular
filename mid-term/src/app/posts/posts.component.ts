@@ -11,12 +11,13 @@ import {GeneralService} from '../services/general.service';
 })
 
 export class PostsComponent implements OnInit {
+  [x: string]: any;
   public posts: Post[]=[];
   public photos: Photo[]=[];
 
   public users:User[]=[];
   searchInput = "";
-
+  user:User;
   
   constructor(private generalService: GeneralService) { }
 
@@ -26,21 +27,22 @@ export class PostsComponent implements OnInit {
 
     this.getPosts();
     this.getUsers();
-    console.log(JSON.stringify(localStorage.getItem( 'token' ))) ;
-    
+    this.getCurrentUser()
   }
   getPosts(){
 
     this.generalService.getPosts()
-    .subscribe(posts => this.posts = posts);
-    
+    .subscribe(posts => this.posts = posts); 
   }
-
   
   getUsers(){
     this.generalService.getUsers()
     .subscribe(users => this.users = users);
 
+  }
+  getCurrentUser(){
+    this.authenticationService.getUser()
+    .subscribe(user => this.user = user);
   }
   
 }

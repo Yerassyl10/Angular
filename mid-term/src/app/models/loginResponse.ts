@@ -1,3 +1,5 @@
 export class LoginResponse{
-    token:string;
+    access_token:string;
+    userId:number;
+    username:string;
 }

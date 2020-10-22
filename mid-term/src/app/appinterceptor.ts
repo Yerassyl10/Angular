@@ -11,12 +11,12 @@ export class AppInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
 ): Observable<HttpEvent<any>> {
-   const token = localStorage.getItem( 'token' ) ;
+   const token =  JSON.parse(localStorage.getItem( 'token' )) ;
     if (token) {
         return next.handle(
             req.clone({
                 setHeaders: {
-                    Authorization: token,
+                    Authorization: ` ${token.access_token}`,
                 },
             })
         );
@@ -30,7 +30,7 @@ export class AppInterceptor implements HttpInterceptor {
   //   const token = localStorage.getItem('token');
   //   if (token){
   //     const authReq = req.clone({
-  //       headers: req.headers.append('Authorization', `JWT ${token}`)
+  //       headers: req.headers.append('Authorization', `Bearer ${token}`)
   //     });
   //     return next.handle(authReq);
   //   }

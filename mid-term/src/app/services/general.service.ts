@@ -13,28 +13,20 @@ import {Comment} from '../models/comment'
 })
 export class GeneralService {
   BASE_URL = 'http://localhost:3000'
-  token: string = 'Basic QnJldDpRd2VydHkxMjMj';
+  user: User;
+
   constructor(private http: HttpClient) { }
   
 
   getPosts(): Observable<Post[]> {
     
     return this.http.get<Post[]>( `${this.BASE_URL}/posts`, 
-  //   {
-  //     headers: {
-  //         Authorization: this.token,
-  //     },
-  // }
+
   )
   }
   getPhotos(): Observable<Photo[]> {
     return this.http.get<Photo[]>( `${this.BASE_URL}/photos`, 
-    // {
-    
-    //   headers: {
-    //       Authorization: this.token,
-    //   },
-    // }
+
     )
     }
 
@@ -44,40 +36,28 @@ export class GeneralService {
   
   getAlbumsofU(): Observable<Album[]>{
     return this.http.get<Album[]>(`${this.BASE_URL}/albums`,  
-  //   {
-  //     headers: {
-  //         Authorization: this.token,
-  //     },
-  // }
+ 
   )
   
     
   
   }
   pushPost(post: Post): Observable<Post>{
-    return this.http.post<Post>(`${this.BASE_URL}/posts`, post,  {
-      headers: {
-          Authorization: this.token,
-      },
-  })
+    return this.http.post<Post>(`${this.BASE_URL}/posts`, post,  )
   }
   register(user: User): Observable<User>{
     return this.http.post<User>(`${this.BASE_URL}/users`, user)
   }
   getCommentsofP(id: number): Observable<Comment[]> {
-    return this.http.get<Comment[]>(`${this.BASE_URL}/posts/${id}/comments`, {
-      headers: {
-          Authorization: this.token,
-      },
-  });
+    return this.http.get<Comment[]>(`${this.BASE_URL}/posts/${id}/comments`);
   }
 
   addComment(comment: Comment){
-    return this.http.post<Comment>(`${this.BASE_URL}/comments`, comment, {
-      headers: {
-          Authorization: this.token,
-      },
-  })
+    return this.http.post<Comment>(`${this.BASE_URL}/comments`, comment)
+  }
+
+  getCurrentUser(){
+    
   }
 }
 

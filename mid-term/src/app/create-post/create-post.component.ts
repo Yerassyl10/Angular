@@ -12,14 +12,14 @@ export class CreatePostComponent implements OnInit {
   post:Post;
   myForm: FormGroup;
   submitted = false;
-
+  currentUserId: number;
   constructor(
     private fb: FormBuilder,
     private generalService: GeneralService
   ) { }
 
   ngOnInit(): void {
-
+    this.currentUserId =  Number( ` ${JSON.parse(localStorage.getItem( 'token' )).userId}`);
     
     this.myForm=this.fb.group({
       userId: '',
@@ -33,7 +33,7 @@ export class CreatePostComponent implements OnInit {
 
   submit(){
     this.post={
-      userId: this.myForm.controls['userId'].value,
+      userId: this.currentUserId,
       id: this.myForm.controls['id'].value,
       title: this.myForm.controls['title'].value,
       body: this.myForm.controls['body'].value,
