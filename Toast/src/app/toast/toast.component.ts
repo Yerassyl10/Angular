@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy, Inject } from "@angular/core";
 import { AnimationEvent } from "@angular/animations";
-
 import { Toast, TOAST_TOKEN, ToastPosition } from "./toast-config";
 import { ToastRef } from "./toast-ref";
 import { toastAnimations, ToastAnimationState } from "./toast-animation";

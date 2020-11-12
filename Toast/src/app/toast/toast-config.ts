@@ -1,4 +1,4 @@
-import { InjectionToken, TemplateRef } from '@angular/core';
+import { InjectionToken } from '@angular/core';
 
 export class Toast {
 
@@ -24,8 +24,8 @@ export interface ToastPosition {
 
 export const defaultToastConfig: ToastPosition = {
     position: {
-        top: 300,
-        left: 300,
+        top: 0,
+        left: 0,
     }
     
 };
