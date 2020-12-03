@@ -1,0 +1,21 @@
+<div *ngIf="data.isRed" class="toast1"
+     [@AnimationL]="{value: animationState}"
+     (@AnimationL.done)="finished($event)">
+          
+     <div><strong class="mr-auto">{{ data.title }}</strong></div>
+     <div>{{ data.text }}</div>
+  
+  <button   (click)="close()">X</button>
+</div>
+
+<div *ngIf="!data.isRed" class="toast1"
+     [@AnimationR]="{value: animationState}"
+     (@AnimationR.done)="finished($event)">
+         
+     <div >{{ data.title }}</div>
+    <div>{{ data.text }}</div>
+
+  <button (click)="close()">X</button>
+</div>
+
+
