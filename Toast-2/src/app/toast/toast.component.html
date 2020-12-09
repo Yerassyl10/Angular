@@ -1,0 +1,21 @@
+<div *ngIf="data.isRed" class="toast1"
+     [@fadeAnimation]="{value: animationState}"
+     (@fadeAnimation.done)="finished($event)">
+          
+     <div *ngIf="data.showTitle"><strong class="mr-auto">{{ data.title }}</strong></div>
+     <div>{{ data.text }}</div>
+  
+  <button  *ngIf="data.hasCloseButton" (click)="close()">close</button>
+</div>
+
+<div *ngIf="!data.isRed" class="toast2"
+     [@fadeAnimation]="{value: animationState}"
+     (@fadeAnimation.done)="finished($event)">
+         
+     <div *ngIf="data.showTitle">{{ data.title }}</div>
+    <div>{{ data.text }}</div>
+
+  <button  *ngIf="data.hasCloseButton"  (click)="close()">close</button>
+</div>
+
+
