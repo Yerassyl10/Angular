@@ -1,0 +1,37 @@
+<div class="login-container">
+    <h2 class="h2-style">Login</h2>
+    
+  <div class="form-container">
+    <div class="login-container" *ngIf="!logged">
+      <!-- <p>Username <input type="text" [(ngModel)]="username"></p> -->
+      <p>
+        <mat-form-field appearance="fill" style="max-width:100%;height:auto;">
+          <mat-label>Username</mat-label>
+          <input matInput [(ngModel)]="username">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </p>
+      <!-- <p>Password <input type="password" [(ngModel)]="password"></p> -->
+      <p>
+        <mat-form-field appearance="fill" style="max-width:100%;height:auto;">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [(ngModel)]="password" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </p>
+      <button (click)="login()" class="btn-primary">Login</button>
+    </div>
+    <div *ngIf="logged">
+        <h1>You are logged in</h1>
+        <button (click)="logout()" class="btn-primary">Logout</button>
+    </div>
+  </div>
+  <div class="bottom">
+    <button (click)="goBack()"class="back-button"><mat-icon>settings_backup_restore</mat-icon></button>
+  </div>
+</div>
+
+
+

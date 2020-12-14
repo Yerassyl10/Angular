@@ -1,0 +1,53 @@
+.container{
+    margin: 0 6%;
+    text-align: center;
+    display: flex;
+    flex-direction:column;
+    color: cornsilk;
+}
+.menu-line{
+    text-align: right;
+    margin-right: 7%;
+}
+.share-buttons{
+    text-align: center;
+}
+.container-slider{
+    padding:3%
+}
+.box{
+    flex-basis: 20% and auto;
+    padding:10px;
+    list-style: none;
+    font-size: 20px;
+  
+    border-radius: 10px; 
+    text-align: center;
+    background-color: #3f51b5;
+    margin:0 7%;
+
+    
+}
+.addToCart{
+    text-decoration: none;
+    color:  cornsilk;
+    background-color: #3f51b5;
+    padding:10px;
+    border-radius: 2px;
+  
+}
+.bottom{
+    text-align: center;
+    margin: 2%;
+}
+.back-button{  
+    text-decoration: none;
+    color: cornsilk;
+    background-color:  #939edd;
+    padding:10px;
+    border-radius: 2px;
+    
+}
+.h2-style{
+    color: #3f51b5
+}

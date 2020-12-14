@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="products-style">
+    <mat-card *ngFor="let product of products" class="box">
+    <div class="img-container">
+    <a routerLink="/products/{{product.id}}" class="font-style">
+       {{product.name}}
+    
+      <img class="best-item" src="{{product.image}}" width="300" height="240" alt="suret">
+    </a>
+    </div>
+    </mat-card>
+  </div>
+  <div class="bottom">
+    <button (click)="goBack()" class="back-button"><mat-icon>settings_backup_restore</mat-icon></button>
+  </div>
+</div>

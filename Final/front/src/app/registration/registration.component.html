@@ -1,0 +1,32 @@
+﻿<div class="login-container">
+    <div class="form-container">
+        <h2>Registration form</h2>
+<form [formGroup]="myForm">
+    
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="number"  formControlName="id" class="input" placeholder="id"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="name" class="input" placeholder="Name"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="number"  formControlName="categoryId" class="input" placeholder="CategoryId"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="number"  formControlName="price" class="input" placeholder="price"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="description" class="input" placeholder="description"></mat-form-field>
+        
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="text"  formControlName="image" class="input" placeholder="image"></mat-form-field>
+
+    <br>
+    <mat-form-field matInput appearance="fill"> <input matInput type="boolean"  formControlName="sale" class="input" placeholder="sale"></mat-form-field>
+
+    <br>    
+    <button mat-raised-button  (click)="submit()" class="btn-primary">SUBMIT</button>
+   
+</form>
+</div>
+</div>

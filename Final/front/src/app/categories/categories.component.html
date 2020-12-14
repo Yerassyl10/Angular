@@ -1,0 +1,25 @@
+<div class="container">
+
+<ul class="categories-style">
+    <div *ngFor="let category of categories">
+      <button mat-raised-button color="primary" routerLink="/categories/{{category.id}}" class="categories-style">{{category.name}}</button>
+    </div>
+</ul>
+
+<h2 style="color:#3f51b5"> Welcome to our store {{user.username}}</h2>
+<button mat-raised-button *ngIf="user.username=='admin'" routerLink="/registration" style="color:#3f51b5 "> Manage </button>
+
+<mat-drawer-container  class="sales">
+  <h2>SALES</h2>
+
+  <div *ngFor="let product of products" class="sales-products">
+    <div *ngIf="product.sale==true" class="img-container"> 
+      <a routerLink="/products/{{product.id}}">
+        <img class="best-item" src="{{product.image}}" width="300" height="240" alt="suret">
+      </a>
+    </div>
+  </div> 
+</mat-drawer-container>
+ 
+</div>
+<app-bottom-bar></app-bottom-bar>

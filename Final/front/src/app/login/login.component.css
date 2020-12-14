@@ -1,0 +1,41 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: cornsilk;
+   
+}
+.form-container{
+    border: cornsilk solid 2px; 
+    padding:5%;
+    background-color: #3f51b5;
+    margin-left: 26%;
+    margin-right: 26%;
+}
+
+.form-group{
+    margin: 2%;
+}
+.btn-primary{
+    text-decoration: none;
+    color: cornsilk;
+    background-color: #15278b;
+    padding:10px;
+    border-radius: 2px;
+    margin-top: 6%;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+.back-button{  
+    text-decoration: none;
+    color: cornsilk;
+    background-color: #3f51b5;
+    padding:10px;
+    border-radius: 2px;
+    margin-top: 5%;
+    
+}
+.h2-style{
+    color:#3f51b5
+}

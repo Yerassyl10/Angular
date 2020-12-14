@@ -1,0 +1,35 @@
+<div class="container">
+<h2 class="h2-style">{{product.name}}</h2>
+
+<div class="menu-line">
+  <button (click)="addToCart(product)"class="addToCart"><mat-icon>shopping_cart</mat-icon></button>
+  <button *ngIf="user.username=='admin'" (click)="delete(product)"class="addToCart" style="background-color:rgb(224, 14, 14)"><mat-icon>delete_forever</mat-icon></button>
+
+</div>
+
+<div class="container-slider">
+
+  <img  src="{{product.image}}" width="300" height="240" alt="suret">
+
+</div>
+<div class="share-buttons">
+  <button (click)="share(1)">
+    <img class="" src="https://s18955.pcdn.co/wp-content/uploads/2019/06/telegram-copy.png" width="24" height="24">   
+  </button>
+  <button (click)="share(2)">
+    <img class="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/WhatsApp_logo-color-vertical.svg/1200px-WhatsApp_logo-color-vertical.svg.png" width="24" height="24">   
+  </button>
+</div>
+<div class="box">
+<p>
+    Price: {{product.price}}$ <br>
+    Description: {{ product.description }} <br>
+</p>
+<div class="bottom">
+  <button (click)="goBack()"class="back-button"><mat-icon>settings_backup_restore</mat-icon></button>
+</div>
+</div>
+ 
+
+
+ 

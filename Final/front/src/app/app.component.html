@@ -1,0 +1,15 @@
+
+<mat-toolbar color="primary" >
+
+  <mat-toolbar-row >
+    <h1>{{title}}</h1>
+    <a routerLink="categories" class="button"><mat-icon>home</mat-icon> Home</a>
+    <a routerLink="cart" class="button"><mat-icon>shopping_cart</mat-icon> Cart</a>
+    <a *ngIf="!productService.isAuthenticated" routerLink="login" class="button"><mat-icon>assignment_ind</mat-icon> Sign in</a>
+    <a *ngIf="productService.isAuthenticated" routerLink="login" class="button"><mat-icon>assignment_ind</mat-icon> Sign out</a>
+   
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

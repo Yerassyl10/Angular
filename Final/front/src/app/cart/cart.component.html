@@ -1,0 +1,36 @@
+<div class="cart">
+    <div class="cart-header">
+        <h2 class="h2-style">MY CART</h2>
+    </div>
+    
+    <div class="close-container">
+        <button mat-flat-button color="primary"  class="buy-button" (click)="purchase()"><mat-icon>shop</mat-icon> Purchase</button>
+        <button mat-flat-button color="primary"  class="buy-button" (click)=" clearCart()"><mat-icon>delete_forever</mat-icon> Delete</button>
+       
+       
+    </div>
+    <div class="cart-container">
+        <div class="cart-item" *ngFor="let item of items">
+            <img  src="{{item.image}}" width="300" height="240" alt="suret">
+            <span>{{ item.name }}</span>
+            <span> - {{ item.price }}$</span>
+        </div>
+    </div>
+    
+    
+    <mat-drawer-container class="shipping-container">
+        
+        <button mat-flat-button color="primary" class="buy-button" (click)="getUserOrders()"> <mat-icon>history</mat-icon> Show order history</button>
+      <div class="cart-container">
+          <div class="cart-item" *ngFor="let product of orderedItems">
+            <img  src="{{product.image}}" width="300" height="240" alt="suret">
+              <span>{{product.name}}</span>
+          </div>
+         
+      </div>
+      
+    </mat-drawer-container>
+
+   
+    
+</div>

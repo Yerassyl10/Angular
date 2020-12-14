@@ -1,0 +1,48 @@
+@media only screen and (min-width: 530px) {
+.products-style{
+    display: flex;
+    justify-content: space-between;
+    padding:0;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.img-container :hover{
+    transform: scale(1.5);
+}
+}
+
+.box{
+    flex-basis: 20%;
+    padding:15px;
+    list-style: none;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color:  #3f51b5;
+    margin-bottom: 2%;
+}
+
+.container{
+    padding: 0;
+    margin:5%;
+    align-items: center;
+}
+
+.font-style{
+    text-decoration: none;
+    color: cornsilk;
+}
+
+
+
+.bottom{
+    text-align: center;
+}
+.back-button{
+    text-decoration: none;
+    color: cornsilk;
+    background-color:#3f51b5;
+    padding:10px;
+    border-radius: 2px;
+    margin-right: 19px;
+}
